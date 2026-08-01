@@ -75,14 +75,17 @@
             transform: skewX(20deg); 
         }
 
+        /* 우측 상단 정렬을 위한 묶음 컨테이너 */
+        .right-header-group {
+            display: flex;
+            align-items: center;
+            gap: 25px; /* 버튼과 스위치 사이의 세련된 간격 */
+        }
+
         .switch-container {
-            position: fixed;
-            top: 25px;
-            right: 50px;
             display: flex;
             align-items: center;
             gap: 10px;
-            z-index: 10000;
         }
 
         .theme-switch {
@@ -112,24 +115,37 @@
             left: 34px;
             background-color: #ff4655;
         }
+
+        /* 우측 상단 미니 유튜브 버튼 호버 효과 추가 */
+        .header-youtube-btn:hover {
+            background-color: #ff2a3b !important;
+            box-shadow: 0 0 15px rgba(255, 70, 85, 0.6) !important;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
 
-    <!-- 상단 메뉴 헤더 영역 -->
+    <!-- 1. 상단 메뉴 헤더 영역 (유튜브 버튼을 스위치 옆으로 알잘딱하게 이동) -->
     <div style="background-color: var(--container-bg); padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #ff4655; position: sticky; top: 0; z-index: 9999; transition: background-color 0.3s;">
         <div style="font-family: 'Oswald', sans-serif; font-size: 28px; font-weight: 900; color: #ff4655; letter-spacing: 3px;">JEOGORI GAMES</div>
         
-        <div class="switch-container">
-            <!-- 💡 기존 영어 대신 처음부터 '다크 모드'라는 한글로 세팅했습니다! -->
-            <span style="font-size: 14px; font-weight: 700; color: var(--text-color); font-family: 'Noto Sans KR', sans-serif;">다크 모드</span>
-            <div class="theme-switch" id="themeBtn" onclick="toggleTheme()">
-                <div class="switch-handle" id="switchHandle"></div>
+        <!-- 오른쪽 묶음 레이아웃 -->
+        <div class="right-header-group">
+            <!-- 💡 요청하신 위치! 스위치 바로 왼쪽에 밀착 탑재된 유튜브 구독 버튼 -->
+            <a href="https://youtube.com" target="_blank" class="header-youtube-btn" style="background-color: #ff4655; color: white; border: none; padding: 10px 22px; font-size: 14px; font-weight: 900; text-decoration: none; letter-spacing: 1px; border-radius: 4px; box-shadow: 0 4px 15px rgba(255, 70, 85, 0.3); transition: all 0.2s ease;">YOUTUBE 구독하기</a>
+            
+            <!-- 다크모드/라이트모드 스위치 구조 -->
+            <div class="switch-container">
+                <span style="font-size: 14px; font-weight: 700; color: var(--text-color); font-family: 'Noto Sans KR', sans-serif;">다크 모드</span>
+                <div class="theme-switch" id="themeBtn" onclick="toggleTheme()">
+                    <div class="switch-handle" id="switchHandle"></div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- 메인 레이아웃 본문 구역 -->
+    <!-- 2. 메인 레이아웃 본문 구역 -->
     <div style="display: flex; max-width: 1400px; margin: 0 auto; padding: 50px 20px; gap: 80px; justify-content: center; align-items: flex-start; text-align: left;">
         
         <!-- 좌측 3D 메뉴 바 -->
@@ -138,15 +154,14 @@
             <a href="#char-section" class="menu-item"><span>캐릭터 정보</span></a>
             <a href="#skill-section" class="menu-item"><span>스킬 정보</span></a>
             <a href="#deck-section" class="menu-item"><span>조합 정보</span></a>
-            <a href="#system-section" class="menu-item"><span>설정 및 시스템</span></a>
+            <a href="#child-section" class="menu-item"><span>설정 및 시스템</span></a>
         </div>
 
         <!-- 우측 메인 비주얼 및 미디어 플레이어 -->
         <div style="flex: 1; max-width: 900px;">
-            <div style="padding: 100px 50px; background: linear-gradient(rgba(8, 10, 14, 0.4), var(--bg-color)), url('https://unsplash.com') no-repeat center center/cover; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); margin-bottom: 50px; position: relative;">
+            <div style="padding: 120px 50px; background: linear-gradient(rgba(8, 10, 14, 0.4), var(--bg-color)), url('https://unsplash.com') no-repeat center center/cover; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); margin-bottom: 50px; position: relative;">
                 <h1 style="font-family: 'Oswald', sans-serif; font-size: 72px; font-weight: 900; color: #ece8e1; margin: 0 0 10px 0; letter-spacing: 6px;">PLAY JEOGORI</h1>
-                <p style="font-size: 20px; font-weight: 700; color: #ece8e1; line-height: 1.8; margin-bottom: 40px;">전 세계 유저의 심장을 뛰게 할 차세대 하드코어 인디 RPG.</p>
-                <a href="https://youtube.com" target="_blank" style="background-color: #ff4655; color: white; border: none; padding: 18px 45px; font-size: 16px; font-weight: 900; text-decoration: none; letter-spacing: 1px; box-shadow: 0 4px 20px rgba(255, 70, 85, 0.4); display: inline-block;">YOUTUBE 구독하기</a>
+                <p style="font-size: 20px; font-weight: 700; color: #ece8e1; line-height: 1.8; margin-bottom: 0;">전 세계 유저의 심장을 뛰게 할 차세대 하드코어 인디 RPG.</p>
             </div>
 
             <!-- 유튜브 미디어 배포 공간 -->
@@ -160,12 +175,12 @@
 
     </div>
 
-    <!-- 하단 카피라이트 -->
+    <!-- 3. 하단 카피라이트 -->
     <div style="background-color: var(--bg-color); padding: 30px; border-top: 1px solid rgba(255,255,255,0.05); color: #555861; font-size: 13px; margin-top: 100px;">
         <p>© 2026 JEOGORI GAMES. ALL RIGHTS RESERVED.</p>
     </div>
 
-    <!-- 💡 클릭 시 작동하며 글자도 자동으로 변경해 주는 자바스크립트 시스템 -->
+    <!-- 4. 클릭 시 작동하며 글자도 자동으로 변경해 주는 자바스크립트 시스템 -->
     <script>
         function toggleTheme() {
             const body = document.body;
