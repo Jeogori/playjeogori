@@ -6,15 +6,16 @@
     <title>Play Jeogori - 캐릭터 정보</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        body { background-color: #0b0a0d; color: #e3dec9; text-align: center; font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
+        body { background-color: #0b0a0d; color: #e3dec9; text-align: center; font-family: 'Noto Serif KR', serif; margin: 0; padding: 0; overflow-x: hidden; }
         .header-bar { background-color: #131117; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #c5a880; position: sticky; top: 0; z-index: 9999; box-shadow: 0 4px 20px rgba(0,0,0,0.8); }
         .logo-text { font-family: 'Cinzel', serif; font-size: 26px; font-weight: 900; color: #c5a880; letter-spacing: 2px; }
-        .youtube-btn { background: linear-gradient(135deg, #9e2a2b, #6e1a1b); color: #ffffff !important; border: 1px solid #c5a880; padding: 10px 22px; font-size: 14px; font-weight: 700; text-decoration: none; letter-spacing: 1px; border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.4); }
+        .youtube-btn { background: linear-gradient(135deg, #9e2a2b, #6e1a1b); color: #ffffff !important; border: 1px solid #c5a880; padding: 10px 22px; font-size: 14px; font-weight: 700; text-decoration: none; letter-spacing: 1px; border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.4); transition: all 0.2s; }
+        .youtube-btn:hover { filter: brightness(1.2); box-shadow: 0 0 15px #c5a880; transform: translateY(-1px); }
         .main-container { display: flex; max-width: 1200px; margin: 0 auto; padding: 50px 20px; gap: 40px; justify-content: center; align-items: flex-start; text-align: left; }
         .menu-container { display: flex; flex-direction: column; gap: 10px; width: 240px; flex-shrink: 0; }
         .menu-item { background-color: #1c1922; color: #e3dec9; padding: 15px 20px; font-weight: 700; font-size: 16px; text-decoration: none; text-align: left; border-left: 5px solid #36303d; border-top: 1px solid #36303d; border-right: 1px solid #36303d; border-bottom: 1px solid #36303d; border-radius: 0 6px 6px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: all 0.2s ease; white-space: nowrap; }
         .menu-item:hover, .menu-item.active { background-color: #9e2a2b; color: #ffffff; border-left: 5px solid #c5a880; transform: translateX(6px); }
-        .content-window { background-color: #131117; border: 2px solid #c5a880; border-radius: 6px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); box-sizing: border-box; flex: 1; max-width: 880px; width: 100%; min-height: 460px; }
+        .content-window { background-color: #131117; border: 2px solid #c5a880; border-radius: 6px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); box-sizing: border-box; flex: 1; max-width: 880px; width: 100%; min-height: 480px; }
         .window-title { font-family: 'Cinzel', serif; font-size: 26px; color: #c5a880; border-bottom: 1px solid #36303d; padding-bottom: 15px; margin-top: 0; margin-bottom: 25px; letter-spacing: 1px; }
     </style>
 </head>
@@ -29,9 +30,15 @@
             <a href="system.html" class="menu-item">⚙️ 설정 및 시스템</a>
         </div>
         <div class="content-window">
-            <h2 class="window-title">CHARACTER CLASS INFO</h2>
-            <p style="font-size: 17px; font-weight: 700; color: #c5a880; margin-bottom: 15px;">출시 예정 영웅 및 클래스 정보 도감</p>
-            <p style="font-size: 15px; color: #e3dec9; line-height: 1.8;">여기에 기획 중이신 캐릭터의 영웅 정보(전사, 마법사, 로그 등)의 고유 패시브와 특징 능력치를 타이핑해 유저들에게 공략을 배포하는 독자적인 캐릭터 정보 전용 화면입니다.</p>
+            <h2 class="window-title">HEROES OF THE ABYSS</h2>
+            <p style="font-size: 18px; font-weight: 700; color: #c5a880; margin-bottom: 20px;">심연의 전장으로 나아갈 클래스 가이드</p>
+            <p style="font-size: 15px; color: #e3dec9; line-height: 1.9; margin-bottom: 25px;">
+                본 게임은 고유의 플레이 스타일을 지닌 독자적인 영웅 계보를 제공합니다.<br><br>
+                • <strong>어둠의 전사 (Vanguard):</strong> 거대한 대검을 휘두르며 적들의 공세를 몸으로 받아내는 파괴적인 근접 딜러 겸 탱커 클래스입니다.<br>
+                • <strong>비전 마법사 (Arcanist):</strong> 심연의 원소 마법을 조율하여 강력한 광역 피해를 주는 원거리 화력의 핵심 클래스입니다.<br>
+                • <strong>그림자 추적자 (Infiltrator):</strong> 민첩하게 적의 배후를 기습하여 치명타를 입히고 독 속성 상태 이상을 부여하는 암살형 직업입니다.
+            </p>
+            <p style="font-size: 14px; color: #7e828d; line-height: 1.6; border-top: 1px solid #36303d; padding-top: 15px;">※ 유튜브 채널을 구독하시면 추후 개발 단계에서 추가될 신규 직업 '사제'와 '네크로맨서'의 인게임 일러스트를 가장 먼저 확인하실 수 있습니다.</p>
         </div>
     </div>
     <div style="background-color: #0b0a0d; padding: 30px; border-top: 1px solid #36303d; color: #555861; font-size: 13px; margin-top: 100px;"><p>© 2026 JEOGORI GAMES. ALL RIGHTS RESERVED.</p></div>

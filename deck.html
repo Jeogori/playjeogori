@@ -6,15 +6,16 @@
     <title>Play Jeogori - 조합 정보</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        body { background-color: #0b0a0d; color: #e3dec9; text-align: center; font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
+        body { background-color: #0b0a0d; color: #e3dec9; text-align: center; font-family: 'Noto Serif KR', serif; margin: 0; padding: 0; overflow-x: hidden; }
         .header-bar { background-color: #131117; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #c5a880; position: sticky; top: 0; z-index: 9999; box-shadow: 0 4px 20px rgba(0,0,0,0.8); }
         .logo-text { font-family: 'Cinzel', serif; font-size: 26px; font-weight: 900; color: #c5a880; letter-spacing: 2px; }
-        .youtube-btn { background: linear-gradient(135deg, #9e2a2b, #6e1a1b); color: #ffffff !important; border: 1px solid #c5a880; padding: 10px 22px; font-size: 14px; font-weight: 700; text-decoration: none; letter-spacing: 1px; border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.4); }
+        .youtube-btn { background: linear-gradient(135deg, #9e2a2b, #6e1a1b); color: #ffffff !important; border: 1px solid #c5a880; padding: 10px 22px; font-size: 14px; font-weight: 700; text-decoration: none; letter-spacing: 1px; border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.4); transition: all 0.2s; }
+        .youtube-btn:hover { filter: brightness(1.2); box-shadow: 0 0 15px #c5a880; transform: translateY(-1px); }
         .main-container { display: flex; max-width: 1200px; margin: 0 auto; padding: 50px 20px; gap: 40px; justify-content: center; align-items: flex-start; text-align: left; }
         .menu-container { display: flex; flex-direction: column; gap: 10px; width: 240px; flex-shrink: 0; }
         .menu-item { background-color: #1c1922; color: #e3dec9; padding: 15px 20px; font-weight: 700; font-size: 16px; text-decoration: none; text-align: left; border-left: 5px solid #36303d; border-top: 1px solid #36303d; border-right: 1px solid #36303d; border-bottom: 1px solid #36303d; border-radius: 0 6px 6px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: all 0.2s ease; white-space: nowrap; }
         .menu-item:hover, .menu-item.active { background-color: #9e2a2b; color: #ffffff; border-left: 5px solid #c5a880; transform: translateX(6px); }
-        .content-window { background-color: #131117; border: 2px solid #c5a880; border-radius: 6px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); box-sizing: border-box; flex: 1; max-width: 880px; width: 100%; min-height: 460px; }
+        .content-window { background-color: #131117; border: 2px solid #c5a880; border-radius: 6px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); box-sizing: border-box; flex: 1; max-width: 880px; width: 100%; min-height: 480px; }
         .window-title { font-family: 'Cinzel', serif; font-size: 26px; color: #c5a880; border-bottom: 1px solid #36303d; padding-bottom: 15px; margin-top: 0; margin-bottom: 25px; letter-spacing: 1px; }
     </style>
 </head>
@@ -29,9 +30,14 @@
             <a href="system.html" class="menu-item">⚙️ 설정 및 시스템</a>
         </div>
         <div class="content-window">
-            <h2 class="window-title">CRAFTING & COMBINATION</h2>
-            <p style="font-size: 17px; font-weight: 700; color: #c5a880; margin-bottom: 15px;">장비 합성식 및 숨겨진 장비 아이템 레시피</p>
-            <p style="font-size: 15px; color: #e3dec9; line-height: 1.8;">고급 무기 제작법, 유니크 룬 합성 규칙, 혹은 최적의 전략적 덱 조합 공략집 가이드라인을 깔끔하게 수록하는 독립된 장비 조합 전용 화면입니다.</p>
+            <h2 class="window-title">FORGING & RECIPES</h2>
+            <p style="font-size: 18px; font-weight: 700; color: #c5a880; margin-bottom: 20px;">무작위 옵션 파밍과 고대 룬 결합 법칙</p>
+            <p style="font-size: 15px; color: #e3dec9; line-height: 1.9; margin-bottom: 25px;">
+                최강의 장비는 필드 드랍이 아닌 오직 마을 대장간의 비밀 연금 조합을 통해서만 수여됩니다.<br><br>
+                • <strong>아이템 티어 조합식:</strong> 하위 장비 3개를 특수 연금 정수와 결합 시 100% 확률로 상위 등급 무기가 무작위 감정 속성을 지닌 채 출현합니다.<br>
+                • <strong>룬 워드 (Rune Words) 시스템:</strong> 소켓 소유 장비에 고대 문자 룬을 순서대로 결합하면 보스 몬스터에게 극대화 피해를 가하는 고유 신성 스킬이 봉인 해제됩니다.<br>
+                • <strong>장비 가치 보존 선언:</strong> 과도한 강화 실패 확률로 무기가 완전히 폭파 증발하는 스트레스 요소를 배제하고, 장비 강화도 수치를 다른 장비로 계승 전수할 수 있습니다.
+            </p>
         </div>
     </div>
     <div style="background-color: #0b0a0d; padding: 30px; border-top: 1px solid #36303d; color: #555861; font-size: 13px; margin-top: 100px;"><p>© 2026 JEOGORI GAMES. ALL RIGHTS RESERVED.</p></div>

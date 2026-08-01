@@ -6,15 +6,16 @@
     <title>Play Jeogori - 설정 및 시스템</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        body { background-color: #0b0a0d; color: #e3dec9; text-align: center; font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
+        body { background-color: #0b0a0d; color: #e3dec9; text-align: center; font-family: 'Noto Serif KR', serif; margin: 0; padding: 0; overflow-x: hidden; }
         .header-bar { background-color: #131117; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #c5a880; position: sticky; top: 0; z-index: 9999; box-shadow: 0 4px 20px rgba(0,0,0,0.8); }
         .logo-text { font-family: 'Cinzel', serif; font-size: 26px; font-weight: 900; color: #c5a880; letter-spacing: 2px; }
-        .youtube-btn { background: linear-gradient(135deg, #9e2a2b, #6e1a1b); color: #ffffff !important; border: 1px solid #c5a880; padding: 10px 22px; font-size: 14px; font-weight: 700; text-decoration: none; letter-spacing: 1px; border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.4); }
+        .youtube-btn { background: linear-gradient(135deg, #9e2a2b, #6e1a1b); color: #ffffff !important; border: 1px solid #c5a880; padding: 10px 22px; font-size: 14px; font-weight: 700; text-decoration: none; letter-spacing: 1px; border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.4); transition: all 0.2s; }
+        .youtube-btn:hover { filter: brightness(1.2); box-shadow: 0 0 15px #c5a880; transform: translateY(-1px); }
         .main-container { display: flex; max-width: 1200px; margin: 0 auto; padding: 50px 20px; gap: 40px; justify-content: center; align-items: flex-start; text-align: left; }
         .menu-container { display: flex; flex-direction: column; gap: 10px; width: 240px; flex-shrink: 0; }
         .menu-item { background-color: #1c1922; color: #e3dec9; padding: 15px 20px; font-weight: 700; font-size: 16px; text-decoration: none; text-align: left; border-left: 5px solid #36303d; border-top: 1px solid #36303d; border-right: 1px solid #36303d; border-bottom: 1px solid #36303d; border-radius: 0 6px 6px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: all 0.2s ease; white-space: nowrap; }
         .menu-item:hover, .menu-item.active { background-color: #9e2a2b; color: #ffffff; border-left: 5px solid #c5a880; transform: translateX(6px); }
-        .content-window { background-color: #131117; border: 2px solid #c5a880; border-radius: 6px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); box-sizing: border-box; flex: 1; max-width: 880px; width: 100%; min-height: 460px; }
+        .content-window { background-color: #131117; border: 2px solid #c5a880; border-radius: 6px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); box-sizing: border-box; flex: 1; max-width: 880px; width: 100%; min-height: 480px; }
         .window-title { font-family: 'Cinzel', serif; font-size: 26px; color: #c5a880; border-bottom: 1px solid #36303d; padding-bottom: 15px; margin-top: 0; margin-bottom: 25px; letter-spacing: 1px; }
     </style>
 </head>
@@ -29,9 +30,14 @@
             <a href="system.html" class="menu-item active">⚙️ 설정 및 시스템</a>
         </div>
         <div class="content-window">
-            <h2 class="window-title">SYSTEM REQUIREMENTS</h2>
-            <p style="font-size: 17px; font-weight: 700; color: #c5a880; margin-bottom: 15px;">게임 조작 및 컴퓨터 하드웨어 구동 권장사양</p>
-            <p style="font-size: 15px; color: #e3dec9; line-height: 1.8;">게임 빌드 런처 실행에 필요한 최소/권장 사양이나 기본 단축키 매핑 레이아웃 정보를 사전에 정비해 유저들의 진입을 돕는 독립된 시스템 설정 화면입니다.</p>
+            <h2 class="window-title">SPECIFICATIONS & CONTROLS</h2>
+            <p style="font-size: 18px; font-weight: 700; color: #c5a880; margin-bottom: 20px;">권장 구동 사양 및 디폴트 키맵 맵핑</p>
+            <p style="font-size: 15px; color: #e3dec9; line-height: 1.9; margin-bottom: 25px;">
+                인디 최적화 가속 설계를 통하여 일반적인 보급형 하드웨어 사양에서도 초당 60프레임 방어를 완수합니다.<br><br>
+                • <strong>최소 운영 사양:</strong> Windows 10/11 (64-bit) / Intel Core i3 / GTX 1050 / RAM 8GB<br>
+                • <strong>권장 운영 사양:</strong> Windows 10/11 (64-bit) / Intel Core i5 / GTX 1660 Super / RAM 16GB<br>
+                • <strong>기본 키보드 조작계:</strong> 이동(W, A, S, D) / 기본 공격(마우스 좌클릭) / 패링 가드(마우스 우클릭) / 대시 회피(Space) / 스킬 단축 슬롯(Q, E, R, F)
+            </p>
         </div>
     </div>
     <div style="background-color: #0b0a0d; padding: 30px; border-top: 1px solid #36303d; color: #555861; font-size: 13px; margin-top: 100px;"><p>© 2026 JEOGORI GAMES. ALL RIGHTS RESERVED.</p></div>

@@ -6,22 +6,22 @@
     <title>Play Jeogori - 공식 홈페이지</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        body { background-color: #0b0a0d; color: #e3dec9; text-align: center; font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
+        body { background-color: #0b0a0d; color: #e3dec9; text-align: center; font-family: 'Noto Serif KR', serif; margin: 0; padding: 0; overflow-x: hidden; }
         .header-bar { background-color: #131117; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #c5a880; position: sticky; top: 0; z-index: 9999; box-shadow: 0 4px 20px rgba(0,0,0,0.8); }
         .logo-text { font-family: 'Cinzel', serif; font-size: 26px; font-weight: 900; color: #c5a880; letter-spacing: 2px; }
-        .youtube-btn { background: linear-gradient(135deg, #9e2a2b, #6e1a1b); color: #ffffff !important; border: 1px solid #c5a880; padding: 10px 22px; font-size: 14px; font-weight: 700; text-decoration: none; letter-spacing: 1px; border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.4); }
+        .youtube-btn { background: linear-gradient(135deg, #9e2a2b, #6e1a1b); color: #ffffff !important; border: 1px solid #c5a880; padding: 10px 22px; font-size: 14px; font-weight: 700; text-decoration: none; letter-spacing: 1px; border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.4); transition: all 0.2s; }
+        .youtube-btn:hover { filter: brightness(1.2); box-shadow: 0 0 15px #c5a880; transform: translateY(-1px); }
         .main-container { display: flex; max-width: 1200px; margin: 0 auto; padding: 50px 20px; gap: 40px; justify-content: center; align-items: flex-start; text-align: left; }
         .menu-container { display: flex; flex-direction: column; gap: 10px; width: 240px; flex-shrink: 0; }
         .menu-item { background-color: #1c1922; color: #e3dec9; padding: 15px 20px; font-weight: 700; font-size: 16px; text-decoration: none; text-align: left; border-left: 5px solid #36303d; border-top: 1px solid #36303d; border-right: 1px solid #36303d; border-bottom: 1px solid #36303d; border-radius: 0 6px 6px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: all 0.2s ease; white-space: nowrap; }
         .menu-item:hover, .menu-item.active { background-color: #9e2a2b; color: #ffffff; border-left: 5px solid #c5a880; transform: translateX(6px); }
-        .content-window { background-color: #131117; border: 2px solid #c5a880; border-radius: 6px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); box-sizing: border-box; flex: 1; max-width: 880px; width: 100%; min-height: 460px; }
+        .content-window { background-color: #131117; border: 2px solid #c5a880; border-radius: 6px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); box-sizing: border-box; flex: 1; max-width: 880px; width: 100%; min-height: 480px; }
         .window-title { font-family: 'Cinzel', serif; font-size: 26px; color: #c5a880; border-bottom: 1px solid #36303d; padding-bottom: 15px; margin-top: 0; margin-bottom: 25px; letter-spacing: 1px; }
     </style>
 </head>
 <body>
     <div class="header-bar"><div class="logo-text">JEOGORI RPG</div><a href="https://youtube.com" target="_blank" class="youtube-btn">YOUTUBE 구독하기</a></div>
     <div class="main-container">
-        <!-- 💡 발로란트처럼 클릭 시 해당 영문 파일 페이지로 완전히 새롭게 화면이 넘어갑니다 -->
         <div class="menu-container">
             <a href="index.html" class="menu-item active">🏰 메인 홈</a>
             <a href="char.html" class="menu-item">🛡️ 캐릭터 정보</a>
@@ -33,7 +33,7 @@
             <h2 class="window-title">THE ADVENTURE BEGINS</h2>
             <div style="width: 100%; height: 260px; background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('https://unsplash.com') no-repeat center center/cover; border: 1px solid #36303d; border-radius: 4px; margin-bottom: 30px;"></div>
             <h1 style="font-family: 'Cinzel', serif; font-size: 38px; margin: 0 0 15px 0; color: #c5a880; letter-spacing: 1px;">PLAY JEOGORI</h1>
-            <p style="font-size: 16px; line-height: 1.8; color: #e3dec9; margin: 0;">보내주신 웅장한 대검 일러스트를 메인 간판으로 장착한 정통 다크 판타지 RPG 공식 웹사이트입니다.<br>왼쪽 메뉴판의 시스템 버튼들을 클릭하면 독립된 개별 페이지로 깔끔하게 이동합니다.</p>
+            <p style="font-size: 16px; line-height: 1.8; color: #e3dec9; margin: 0;">보내주신 심연의 대검 아트를 메인 비주얼로 장착한 정통 다크 판타지 하드코어 RPG 공식 웹기지입니다.<br><br>방대한 심연의 대륙 '저고리'를 탐험할 모험가들을 위한 안내소이며, 왼쪽 메뉴판의 시스템 버튼들을 클릭하면 발로란트와 동일하게 완전히 분리된 개별 독립 페이지로 렉 없이 깔끔하게 화면 전체가 대전환됩니다.</p>
         </div>
     </div>
     <div style="background-color: #0b0a0d; padding: 30px; border-top: 1px solid #36303d; color: #555861; font-size: 13px; margin-top: 100px;"><p>© 2026 JEOGORI GAMES. ALL RIGHTS RESERVED.</p></div>

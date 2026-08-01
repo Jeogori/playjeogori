@@ -6,15 +6,16 @@
     <title>Play Jeogori - 스킬 정보</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        body { background-color: #0b0a0d; color: #e3dec9; text-align: center; font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
+        body { background-color: #0b0a0d; color: #e3dec9; text-align: center; font-family: 'Noto Serif KR', serif; margin: 0; padding: 0; overflow-x: hidden; }
         .header-bar { background-color: #131117; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #c5a880; position: sticky; top: 0; z-index: 9999; box-shadow: 0 4px 20px rgba(0,0,0,0.8); }
         .logo-text { font-family: 'Cinzel', serif; font-size: 26px; font-weight: 900; color: #c5a880; letter-spacing: 2px; }
-        .youtube-btn { background: linear-gradient(135deg, #9e2a2b, #6e1a1b); color: #ffffff !important; border: 1px solid #c5a880; padding: 10px 22px; font-size: 14px; font-weight: 700; text-decoration: none; letter-spacing: 1px; border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.4); }
+        .youtube-btn { background: linear-gradient(135deg, #9e2a2b, #6e1a1b); color: #ffffff !important; border: 1px solid #c5a880; padding: 10px 22px; font-size: 14px; font-weight: 700; text-decoration: none; letter-spacing: 1px; border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.4); transition: all 0.2s; }
+        .youtube-btn:hover { filter: brightness(1.2); box-shadow: 0 0 15px #c5a880; transform: translateY(-1px); }
         .main-container { display: flex; max-width: 1200px; margin: 0 auto; padding: 50px 20px; gap: 40px; justify-content: center; align-items: flex-start; text-align: left; }
         .menu-container { display: flex; flex-direction: column; gap: 10px; width: 240px; flex-shrink: 0; }
         .menu-item { background-color: #1c1922; color: #e3dec9; padding: 15px 20px; font-weight: 700; font-size: 16px; text-decoration: none; text-align: left; border-left: 5px solid #36303d; border-top: 1px solid #36303d; border-right: 1px solid #36303d; border-bottom: 1px solid #36303d; border-radius: 0 6px 6px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: all 0.2s ease; white-space: nowrap; }
         .menu-item:hover, .menu-item.active { background-color: #9e2a2b; color: #ffffff; border-left: 5px solid #c5a880; transform: translateX(6px); }
-        .content-window { background-color: #131117; border: 2px solid #c5a880; border-radius: 6px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); box-sizing: border-box; flex: 1; max-width: 880px; width: 100%; min-height: 460px; }
+        .content-window { background-color: #131117; border: 2px solid #c5a880; border-radius: 6px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); box-sizing: border-box; flex: 1; max-width: 880px; width: 100%; min-height: 480px; }
         .window-title { font-family: 'Cinzel', serif; font-size: 26px; color: #c5a880; border-bottom: 1px solid #36303d; padding-bottom: 15px; margin-top: 0; margin-bottom: 25px; letter-spacing: 1px; }
     </style>
 </head>
@@ -29,9 +30,14 @@
             <a href="system.html" class="menu-item">⚙️ 설정 및 시스템</a>
         </div>
         <div class="content-window">
-            <h2 class="window-title">SKILL TREE SYSTEM</h2>
-            <p style="font-size: 17px; font-weight: 700; color: #c5a880; margin-bottom: 15px;">스킬 계보도 및 마법 특성 조율</p>
-            <p style="font-size: 15px; color: #e3dec9; line-height: 1.8;">RPG 게임 플레이의 핵심 뼈대가 되는 핵심 스킬 트리 연계 시스템이나 마나 소모 메커니즘을 유저들이 미리 학습하고 연구해볼 수 있는 독립된 스킬 전용 화면입니다.</p>
+            <h2 class="window-title">SKILL TREE & MECHANICS</h2>
+            <p style="font-size: 18px; font-weight: 700; color: #c5a880; margin-bottom: 20px;">특성 조합에 따라 변화하는 실시간 액션 시스템</p>
+            <p style="font-size: 15px; color: #e3dec9; line-height: 1.9; margin-bottom: 25px;">
+                무작정 스킬을 난사하는 것이 아닌, 기력(Stamina)과 마나의 자원 상성 메커니즘을 적용했습니다.<br><br>
+                • <strong>콤보 연계기 시스템:</strong> 평타 공격과 액티브 기술을 순차 타이밍에 맞춰 입력할 시 보너스 데미지와 치명타 버프가 영구 중첩됩니다.<br>
+                • <strong>속성 원소 상성 조율:</strong> 적이 '빙결' 상태일 때 전사의 화염 대검 강공격을 시전하면 '융해' 반응이 일어나 방어력을 완전히 무시하는 고정 피해를 줍니다.<br>
+                • <strong>패시브 초월 특성:</strong> 캐릭터 레벨업 시 획득하는 마스터리 포인트를 투자해 쿨타임을 초기화하거나 스킬 사거리를 기하급수적으로 연장할 수 있습니다.
+            </p>
         </div>
     </div>
     <div style="background-color: #0b0a0d; padding: 30px; border-top: 1px solid #36303d; color: #555861; font-size: 13px; margin-top: 100px;"><p>© 2026 JEOGORI GAMES. ALL RIGHTS RESERVED.</p></div>
