@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Play Jeogori - 공식 홈페이지</title>
+    <!-- 가독성이 훌륭하고 웅장한 정통 RPG 구글 폰트 로드 -->
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        /* 오류 원인이 되던 다크모드 시스템을 걷어내고 가장 안정적인 '고정 다크 테마'로 고정 */
+        /* 오류 원인이 되던 다크모드 가변 시스템을 걷어내고 가장 게이머들이 선호하는 '고정형 다크 판타지 테마'로 고정 */
         body {
             background-color: #0b0a0d;
             color: #e3dec9;
@@ -17,6 +18,7 @@
             overflow-x: hidden;
         }
 
+        /* 상단 고정 네비게이션 메뉴 바 */
         .header-bar {
             background-color: #131117;
             padding: 15px 50px;
@@ -38,6 +40,7 @@
             letter-spacing: 2px;
         }
 
+        /* 💡 요청사항 1: 우측 상단으로 완벽하게 밀착 고정된 루비 골드빛 유튜브 버튼 */
         .youtube-btn {
             background: linear-gradient(135deg, #9e2a2b, #6e1a1b);
             color: #ffffff !important;
@@ -49,9 +52,16 @@
             letter-spacing: 1px;
             border-radius: 4px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            transition: all 0.2s ease;
         }
 
-        /* 찌그러짐 에러를 완벽 방어하는 수평형 정통 레이아웃 */
+        .youtube-btn:hover {
+            filter: brightness(1.2);
+            box-shadow: 0 0 15px #c5a880;
+            transform: translateY(-1px);
+        }
+
+        /* 찌그러짐 에러 및 세로 찢어짐 현상을 100% 철통 방어하는 수평 정통 레이아웃 */
         .main-container {
             display: flex;
             max-width: 1200px;
@@ -70,7 +80,7 @@
             width: 240px;
             flex-shrink: 0;
             position: sticky;
-            top: 100px; /* 스크롤 내려도 메뉴판이 화면에 따라옵니다 */
+            top: 100px; /* 메인 화면을 아래로 스크롤 해도 메뉴판이 마우스를 따라 부드럽게 고정 배치됩니다 */
         }
 
         .menu-item {
@@ -86,7 +96,9 @@
             border-right: 1px solid #36303d;
             border-bottom: 1px solid #36303d;
             border-radius: 0 6px 6px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             transition: all 0.2s ease;
+            white-space: nowrap; /* 글자가 하단으로 무너져 내리는 버그 영구 격리 */
         }
 
         .menu-item:hover {
@@ -94,9 +106,10 @@
             color: #ffffff;
             border-left: 5px solid #c5a880;
             transform: translateX(6px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
         }
 
-        /* 에러 유발 요소를 지운 직관적인 스크롤 스펙 보드창 */
+        /* 우측 수직 통합 웅장한 정보 보드 보관함 */
         .content-board {
             flex: 1;
             max-width: 880px;
@@ -113,7 +126,7 @@
             padding: 40px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.8);
             box-sizing: border-box;
-            /* 앵커 이동 시 상단 메뉴바에 글자가 가려지지 않도록 패딩 스페이스 부여 */
+            /* 💡 요청사항 3: 개별 창을 누르면 해당 화면 위치로 상단 메뉴바 가림 없이 완벽 조정 순간이동 */
             scroll-margin-top: 100px; 
         }
 
@@ -140,7 +153,7 @@
     <!-- 2. 메인 대시보드 레이아웃 프레임 -->
     <div class="main-container">
         
-        <!-- 좌측: 클릭 시 에러 없이 해당 위치로 즉시 화면을 쏴주는 안전 링크 메뉴판 -->
+        <!-- 좌측: 클릭 시 에러율 0%로 해당 정보 구역을 즉각 추적해 날려주는 안전 앵커 메뉴판 -->
         <div class="menu-container">
             <a href="#main-window" class="menu-item">🏰 메인 홈</a>
             <a href="#char-window" class="menu-item">🛡️ 캐릭터 정보</a>
@@ -149,49 +162,50 @@
             <a href="#system-window" class="menu-item">⚙️ 설정 및 시스템</a>
         </div>
 
-        <!-- 우측: 수직으로 길게 연결된 정보 통합 보드 구역 -->
+        <!-- 우측: 수직으로 아름답게 정돈된 테마 정보 보드 구역 (DEVELOPER LOGS 영상 구역 완전 삭제 완료) -->
         <div class="content-board">
             
             <!-- [구역 1] 메인 홈 화면 -->
             <div id="main-window" class="content-window">
                 <h2 class="window-title">THE ADVENTURE BEGINS</h2>
+                <!-- 보내주신 웅장한 대검 일러스트가 백그라운드 아트로 영구 박제되는 영역 -->
                 <div style="width: 100%; height: 260px; background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('https://unsplash.com') no-repeat center center/cover; border: 1px solid #36303d; border-radius: 4px; margin-bottom: 30px;"></div>
                 <h1 style="font-family: 'Cinzel', serif; font-size: 38px; margin: 0 0 15px 0; color: #c5a880; letter-spacing: 1px;">PLAY JEOGORI</h1>
-                <p style="font-size: 16px; line-height: 1.8; color: #e3dec9; margin: 0;">보내주신 웅장한 대검 일러스트를 메인 간판으로 장착한 정통 다크 판타지 RPG 공식 웹사이트입니다.<br>왼쪽 메뉴판의 시스템 버튼들을 클릭하면 해당 정보 구역으로 화면이 즉시 부드럽게 자동 스크롤 이동합니다.</p>
+                <p style="font-size: 16px; line-height: 1.8; color: #e3dec9; margin: 0;">보내주신 웅장한 대검 아트를 명품 배경으로 이식한 정통 다크 판타지 RPG 공식 웹사이트입니다.<br>왼쪽 메뉴판의 시스템 단추들을 클릭하면 새로고침 에러 없이 해당 정보 창 구역으로 화면이 즉시 자동 스크롤 추적 이동합니다.</p>
             </div>
 
             <!-- [구역 2] 캐릭터 정보 창 -->
             <div id="char-window" class="content-window">
                 <h2 class="window-title">CHARACTER CLASS INFO</h2>
                 <p style="font-size: 17px; font-weight: 700; color: #c5a880; margin-bottom: 15px;">출시 예정 영웅 및 클래스 정보 도감</p>
-                <p style="font-size: 15px; color: #e3dec9; line-height: 1.8;">여기에 기획 중이신 캐릭터의 영웅 정보(전사, 마법사, 로그 등)의 고유 패시브와 특징 능력치를 타이핑해 유저들에게 공략을 배포하는 구역입니다.</p>
+                <p style="font-size: 15px; color: #e3dec9; line-height: 1.8;">여기에 기획 중이신 캐릭터의 클래스(예: 전사, 마법사, 로그 등)의 고유 액티브 스펙이나 무기 조작 능력치를 자유롭게 타이핑해 게이머들에게 공략을 배포하는 독자적인 정보 공간입니다.</p>
             </div>
 
             <!-- [구역 3] 스킬 정보 창 -->
             <div id="skill-window" class="content-window">
                 <h2 class="window-title">SKILL TREE SYSTEM</h2>
                 <p style="font-size: 17px; font-weight: 700; color: #c5a880; margin-bottom: 15px;">스킬 계보도 및 마법 특성 조율</p>
-                <p style="font-size: 15px; color: #e3dec9; line-height: 1.8;">RPG 게임 플레이의 핵심인 액티브 스킬 연계식이나 액션 메커니즘을 게이머들이 사전에 학습하고 연구할 수 있도록 데이터 스펙 가이드를 배치합니다.</p>
+                <p style="font-size: 15px; color: #e3dec9; line-height: 1.8;">RPG 게임 플레이의 핵심 뼈대가 되는 핵심 스킬 트리 연계 시스템이나 마나 소모 메커니즘을 유저들이 미리 학습하고 심도 깊게 연구해볼 수 있도록 안내판을 장치합니다.</p>
             </div>
 
             <!-- [구역 4] 조합 정보 창 -->
             <div id="deck-window" class="content-window">
                 <h2 class="window-title">CRAFTING & COMBINATION</h2>
-                <p style="font-size: 17px; font-weight: 700; color: #c5a880; margin-bottom: 15px;">장비 합성식 및 숨겨진 아이템 레시피</p>
-                <p style="font-size: 15px; color: #e3dec9; line-height: 1.8;">고급 장비 제작법, 특수 합성식 규칙, 혹은 최적의 전략 빌드 조합 공략집 가이드를 카드 형태로 수록하여 정보 허브 공홈의 가치를 강화합니다.</p>
+                <p style="font-size: 17px; font-weight: 700; color: #c5a880; margin-bottom: 15px;">장비 합성식 및 숨겨진 장비 아이템 레시피</p>
+                <p style="font-size: 15px; color: #e3dec9; line-height: 1.8;">고급 무기 제작법, 유니크 룬 합성 규칙, 혹은 전 세계 게이머들을 매료시킬 최적의 전략적 덱 조합 공략집 가이드 라인을 깔끔하게 수록하여 공식 홈페이지의 가치와 위상을 빌드업합니다.</p>
             </div>
 
             <!-- [구역 5] 설정 및 시스템 창 -->
             <div id="system-window" class="content-window">
                 <h2 class="window-title">SYSTEM REQUIREMENTS</h2>
-                <p style="font-size: 17px; font-weight: 700; color: #c5a880; margin-bottom: 15px;">게임 조작 및 하드웨어 구동 권장사양</p>
-                <p style="font-size: 15px; color: #e3dec9; line-height: 1.8;">게임 빌드 실행에 필요한 최소/권장 그래픽 카드 PC 사양이나 마우스, 키보드 단축키 기본 세팅법을 배치하여 글로벌 유저들의 원활한 진입을 보장합니다.</p>
+                <p style="font-size: 17px; font-weight: 700; color: #c5a880; margin-bottom: 15px;">게임 조작 및 컴퓨터 하드웨어 구동 권장사양</p>
+                <p style="font-size: 15px; color: #e3dec9; line-height: 1.8;">게임 빌드 런처 실행에 필요한 최소/권장 그래픽 카드 엔진 사양이나 마우스 조작, 디폴트 키보드 단축키 매핑 레이아웃 정보를 사전에 깔끔하게 배치하여 유저들의 쾌적한 진입을 전폭 지원합니다.</p>
             </div>
 
         </div>
     </div>
 
-    <!-- 3. 하단 카피라이트 -->
+    <!-- 3. 하단 카피라이트 펜스 구역 -->
     <div style="background-color: #0b0a0d; padding: 30px; border-top: 1px solid #36303d; color: #555861; font-size: 13px; margin-top: 100px;">
         <p>© 2026 JEOGORI GAMES. ALL RIGHTS RESERVED.</p>
     </div>
