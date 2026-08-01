@@ -4,41 +4,184 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Play Jeogori - 공식 홈페이지</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        /* 1. 기본 테마 변수 설정 (알잘딱 다크모드 시스템) */
+        :root {
+            --bg-color: #080a0e;
+            --container-bg: #0b0e14;
+            --text-color: #ffffff;
+            --sub-text: #7e828d;
+            --menu-bg: #000000;
+            --menu-text: #ffffff;
+            --border-color: rgba(255, 70, 85, 0.3);
+            --shadow-color: rgba(255, 42, 59, 0.15);
+        }
+
+        /* 밝은 모드 스타일 정의 */
+        [data-theme="light"] {
+            --bg-color: #f5f6f9;
+            --container-bg: #ffffff;
+            --text-color: #11141a;
+            --sub-text: #606570;
+            --menu-bg: #11141a;
+            --menu-text: #ffffff;
+            --border-color: rgba(255, 70, 85, 0.6);
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            text-align: center;
+            font-family: 'Noto Sans KR', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* 2. 보내주신 메뉴의 3D 입체화 스타일 */
+        .menu-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 260px;
+            margin-top: 50px;
+            perspective: 800px; /* 3D 효과 깊이감 제공 */
+        }
+
+        .menu-item {
+            background-color: var(--menu-bg);
+            color: var(--menu-text);
+            padding: 15px 30px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            text-align: left;
+            letter-spacing: 1px;
+            transform: skewX(-20deg) rotateY(15deg); /* 기울임 + 3D 회전 각도 구현 */
+            box-shadow: -8px 8px 0px rgba(255, 70, 85, 0.6); /* 하단 3D 두께감 표현 */
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .menu-item:hover {
+            transform: skewX(-20deg) rotateY(5deg) translate(4px, -4px);
+            box-shadow: -12px 12px 0px #ff4655;
+            background-color: #ff4655;
+        }
+
+        /* 기울어진 겉모양 때문에 글자까지 안 찌그러지게 내부 텍스트 복구 */
+        .menu-item span {
+            display: inline-block;
+            transform: skewX(20deg); 
+        }
+
+        /* 3. 우측 상단 모던 스위치 스타일 */
+        .switch-container {
+            position: fixed;
+            top: 25px;
+            right: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 10000;
+        }
+
+        .theme-switch {
+            width: 60px;
+            height: 30px;
+            background-color: #ffffff;
+            border-radius: 15px; /* 모서리가 둥근 형태 */
+            position: relative;
+            cursor: pointer;
+            border: 2px solid #ff4655;
+            box-shadow: 0 0 10px rgba(255, 70, 85, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .switch-handle {
+            width: 22px;
+            height: 22px;
+            background-color: #0f1115;
+            border-radius: 50%;
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* 스위치가 켜졌을 때 움직임 정의 */
+        [data-theme="light"] .switch-handle {
+            left: 34px;
+            background-color: #ff4655;
+        }
+    </style>
 </head>
-<body style="background-color: #0f1115; color: #fff; text-align: center; font-family: 'Helvetica Neue', sans-serif; margin: 0; padding: 0; overflow-x: hidden;">
+<body>
 
-    <!-- 상단 메뉴 바 (발로란트 스타일) -->
-    <div style="background-color: #11141a; padding: 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #232833; padding-left: 50px; padding-right: 50px;">
-        <div style="font-size: 24px; font-weight: 900; color: #ff4655; letter-spacing: 2px;">JEOGORI GAMES</div>
-        <div>
-            <!-- 나중에 실제 내 유튜브 주소를 href="여기에" 넣으면 됩니다 -->
-            <<a href="https://www.youtube.com/@Jeogori-Sure" target="_blank" style="color: #ece8e1; text-decoration: none; font-size: 16px; font-weight: bold; margin-left: 20px; letter-spacing: 1px;">YOUTUBE</a>
-            <a href="#community" style="color: #ece8e1; text-decoration: none; font-size: 16px; font-weight: bold; margin-left: 20px; letter-spacing: 1px;">COMMUNITY</a>
-        </div>
-    </div>
-
-    <!-- 메인 대형 배너 구역 (멋진 게임 배경 일러스트 포함) -->
-    <div style="padding-top: 150px; padding-bottom: 150px; background: linear-gradient(rgba(15, 17, 21, 0.7), #0f1115), url('https://unsplash.com') no-repeat center center/cover;">
-        <h1 style="font-size: 64px; font-weight: 900; color: #ece8e1; margin-bottom: 10px; letter-spacing: 5px;">PLAY JEOGORI</h1>
-        <p style="font-size: 22px; color: #7e828d; max-width: 600px; margin: 0 auto 40px auto; line-height: 1.6;">전 세계 유저들과 함께 즐기는 차세대 인디 RPG.<br>지금 공식 유튜브를 구독하고 최신 개발 소식을 만나보세요.</p>
+    <!-- 상단 뼈대 & 우측 상단 다크모드 스위치 버튼 구역 -->
+    <div style="background-color: var(--container-bg); padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #ff4655; position: sticky; top: 0; z-index: 9999; transition: background-color 0.3s;">
+        <div style="font-family: 'Oswald', sans-serif; font-size: 28px; font-weight: 900; color: #ff4655; letter-spacing: 3px;">JEOGORI GAMES</div>
         
-        <!-- 버튼 모음 -->
-        <div style="display: flex; justify-content: center; gap: 20px;">
-            <!-- 유튜브 구독 링크 연결용 버튼 -->
-            <a href="https://www.youtube.com/@Jeogori-Sure" target="_blank" style="background-color: #ff4655; color: white; border: none; padding: 18px 40px; font-size: 18px; font-weight: bold; text-decoration: none; cursor: pointer; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(255, 70, 85, 0.4);">유튜브 채널 구독하기</a>
-            <!-- 다운로드 버튼 (아직 게임이 안나왔으므로 준비중 처리) -->
-            <button style="background-color: transparent; color: #ece8e1; border: 1px solid #383e4d; padding: 18px 40px; font-size: 18px; font-weight: bold; cursor: not-allowed; letter-spacing: 1px;">게임 다운로드 (SOON)</button>
+        <div class="switch-container">
+            <span style="font-size: 14px; font-weight: 700; color: var(--text-color); font-family: 'Oswald', sans-serif;">THEME</span>
+            <!-- 요구하신 직사각형 모서리가 둥근 흰색 스위치 기본형 -->
+            <div class="theme-switch" id="themeBtn" onclick="toggleTheme()">
+                <div class="switch-handle" id="switchHandle"></div>
+            </div>
         </div>
     </div>
 
-    <!-- 내 유튜브 개발 영상을 보여주는 구역 -->
-    <div style="background-color: #11141a; padding: 80px 20px; border-top: 1px solid #232833;">
-        <h2 style="font-size: 32px; color: #ff4655; margin-bottom: 40px; font-weight: 800; letter-spacing: 2px;">DEVELOPER LOGS</h2>
-        <div style="max-width: 800px; margin: 0 auto; aspect-ratio: 16/9; background-color: #000; border: 1px solid #232833; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-            <!-- 유튜브 영상 화면 (우선 멋진 게임 샘플 영상을 넣어두었습니다) -->
-            <iframe width="100%" height="100%" src="https://youtube.com/embed/e57wV8bTz70" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <!-- 메인 콘텐츠 영역 (좌측 메뉴 배치 / 우측 웅장한 비주얼) -->
+    <div style="display: flex; max-width: 1400px; margin: 0 auto; padding: 50px 20px; gap: 80px; justify-content: center; align-items: flex-start; text-align: left;">
+        
+        <!-- 좌측: 보내주신 사진 기반 3D 입체형 메뉴바 -->
+        <div class="menu-container">
+            <div class="menu-item" style="background-color: #ff4655; box-shadow: -8px 8px 0px #ece8e1;"><span>메뉴</span></div>
+            <a href="#char-section" class="menu-item"><span>캐릭터 정보</span></a>
+            <a href="#skill-section" class="menu-item"><span>스킬 정보</span></a>
+            <a href="#deck-section" class="menu-item"><span>조합 정보</span></a>
+            <a href="#system-section" class="menu-item"><span>설정 및 시스템</span></a>
         </div>
+
+        <!-- 우측: 알잘딱깔센하게 정돈한 메인 시네마틱 뷰 구역 -->
+        <div style="flex: 1; max-width: 900px;">
+            <div style="padding: 100px 50px; background: linear-gradient(rgba(8, 10, 14, 0.4), var(--bg-color)), url('https://unsplash.com') no-repeat center center/cover; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); margin-bottom: 50px; position: relative;">
+                <h1 style="font-family: 'Oswald', sans-serif; font-size: 72px; font-weight: 900; color: #ece8e1; margin: 0 0 10px 0; letter-spacing: 6px;">PLAY JEOGORI</h1>
+                <p style="font-size: 20px; font-weight: 700; color: #ece8e1; line-height: 1.8; margin-bottom: 40px;">전 세계 유저의 심장을 뛰게 할 차세대 하드코어 인디 RPG.</p>
+                <a href="https://youtube.com" target="_blank" style="background-color: #ff4655; color: white; border: none; padding: 18px 45px; font-size: 16px; font-weight: 900; text-decoration: none; letter-spacing: 1px; box-shadow: 0 4px 20px rgba(255, 70, 85, 0.4); display: inline-block;">YOUTUBE 구독하기</a>
+            </div>
+
+            <!-- 미디어 영상 구역 -->
+            <div id="media-zone" style="background-color: var(--container-bg); padding: 40px; border: 1px solid var(--border-color); box-shadow: 0 20px 50px var(--shadow-color); border-radius: 8px; transition: background-color 0.3s, border-color 0.3s;">
+                <h2 style="font-family: 'Oswald', sans-serif; font-size: 32px; color: #ff4655; margin-top: 0; margin-bottom: 30px; letter-spacing: 2px;">DEVELOPER LOGS</h2>
+                <div style="width: 100%; aspect-ratio: 16/9; background-color: #000; border-radius: 4px; overflow: hidden;">
+                    <iframe width="100%" height="100%" src="https://youtube.com" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
     </div>
 
+    <!-- 하단 영역 -->
+    <div style="background-color: var(--bg-color); padding: 30px; border-top: 1px solid rgba(255,255,255,0.05); color: #555861; font-size: 13px; margin-top: 100px;">
+        <p>© 2026 JEOGORI GAMES. ALL RIGHTS RESERVED.</p>
+    </div>
+
+    <!-- 4. 알잘딱깔센 스위치 클릭 작동 자바스크립트 소스 -->
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            // 테마 속성이 없거나 다크 상태면 라이트(밝게) 모드로 변환
+            if (!body.hasAttribute('data-theme') || body.getAttribute('data-theme') === 'dark') {
+                body.setAttribute('data-theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+            }
+        }
+    </script>
 </body>
 </html>
