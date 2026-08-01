@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Play Jeogori - 공식 홈페이지</title>
-    <!-- 고풍스럽고 웅장한 판타지풍 구글 폰트 로드 -->
+    <!-- 가독성이 훌륭하고 웅장한 구글 폰트 로드 -->
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        /* 1. 정통 RPG 다크 판타지 테마 변수 (금색, 루비색, 고급스러운 가죽느낌의 다크) */
+        /* RPG 스타일 다크 판타지 테마 색상 정의 */
         :root {
-            --bg-color: #0d0c0f;
-            --container-bg: #141217;
-            --text-color: #e0dccc;
+            --bg-color: #0b0a0d;
+            --container-bg: #131117;
+            --text-color: #e3dec9;
             --accent-gold: #c5a880;
             --accent-ruby: #9e2a2b;
-            --menu-bg: #1a171f;
+            --menu-bg: #1c1922;
             --menu-border: #36303d;
-            --shadow-color: rgba(0, 0, 0, 0.7);
+            --shadow-color: rgba(0, 0, 0, 0.8);
         }
 
-        /* 라이트 모드 테마 (고급스러운 양장본 종이 질감 느낌) */
+        /* 라이트 모드 (고급스러운 양장본 가죽지 느낌) */
         [data-theme="light"] {
             --bg-color: #ede9da;
             --container-bg: #f5f1e3;
@@ -28,21 +28,21 @@
             --accent-ruby: #701c1c;
             --menu-bg: #e3dec9;
             --menu-border: #bfb79c;
-            --shadow-color: rgba(0, 0, 0, 0.1);
+            --shadow-color: rgba(0, 0, 0, 0.15);
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
             text-align: center;
-            font-family: 'Noto Serif KR', serif;
+            font-family: 'Noto Sans KR', sans-serif;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
             transition: background-color 0.3s, color 0.3s;
         }
 
-        /* 상단 헤더 영역 스타일 */
+        /* 상단 메뉴 헤더 영역 */
         .header-bar {
             background-color: var(--container-bg);
             padding: 15px 50px;
@@ -70,7 +70,7 @@
             gap: 20px;
         }
 
-        /* 💡 요청사항 1: 다크/라이트모드 글자 옆으로 딱 붙인 고풍스러운 금빛 유튜브 버튼 */
+        /* 우측 상단 고정형 고급 금빛 유튜브 버튼 */
         .youtube-btn {
             background: linear-gradient(135deg, var(--accent-ruby), #6e1a1b);
             color: #fff;
@@ -80,7 +80,7 @@
             font-weight: 700;
             text-decoration: none;
             letter-spacing: 1px;
-            border-radius: 3px;
+            border-radius: 4px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.4);
             transition: all 0.3s ease;
         }
@@ -124,88 +124,85 @@
             background-color: var(--accent-ruby);
         }
 
-        /* 2. 보내주신 형태를 RPG 인터페이스 창 형태로 리디자인한 3D 평행사변형 메뉴 */
+        /* 🛠️ 글자가 절대 무너지지 않도록 완전히 수정한 직관적 사이드 메뉴 구조 */
         .menu-container {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            width: 250px;
-            margin-top: 20px;
+            gap: 10px;
+            width: 240px; /* 고정 크기 제공 */
+            flex-shrink: 0; /* 절대 찌그러지지 않게 방어 */
         }
 
         .menu-item {
             background-color: var(--menu-bg);
             color: var(--text-color);
-            padding: 16px 25px;
+            padding: 15px 20px;
             font-weight: 700;
             font-size: 16px;
             text-decoration: none;
             text-align: left;
-            letter-spacing: 1px;
-            transform: skewX(-15deg); /* 요구하신 평행사변형 구조 */
-            border-left: 4px solid var(--accent-gold);
+            letter-spacing: 0.5px;
+            border-left: 4px solid var(--menu-border);
             border-top: 1px solid var(--menu-border);
             border-right: 1px solid var(--menu-border);
             border-bottom: 1px solid var(--menu-border);
-            box-shadow: -5px 5px 10px rgba(0,0,0,0.5);
+            border-radius: 0 8px 8px 0; /* 우측 모서리만 부드럽게 라운딩 */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             transition: all 0.2s ease;
             cursor: pointer;
+            white-space: nowrap; /* 글자가 아래로 찢어지는 현상 절대 방지 */
         }
 
         .menu-item:hover, .menu-item.active {
             background-color: var(--accent-ruby);
             color: #ffffff;
-            border-left: 4px solid #ffffff;
-            transform: skewX(-15deg) translate(3px, -3px);
-            box-shadow: -8px 8px 15px var(--shadow-color);
+            border-left: 4px solid var(--accent-gold);
+            box-shadow: 0 6px 15px var(--shadow-color);
+            transform: translateX(5px); /* 호버 시 우측으로 슥 밀리는 애니메이션 */
         }
 
-        .menu-item span {
-            display: inline-block;
-            transform: skewX(15deg); /* 글자 찌그러짐 원상복구 */
-        }
-
-        /* 💡 요청사항 3: 각각의 정보창을 띄워주는 개별 탭 시스템 디자인 */
+        /* 오른쪽 개별 정보창 본문 인테리어 */
         .content-window {
             background-color: var(--container-bg);
             border: 2px solid var(--accent-gold);
-            border-radius: 4px;
+            border-radius: 6px;
             padding: 40px;
             box-shadow: 0 10px 30px var(--shadow-color);
-            display: none; /* 기본적으로 전부 숨김 처리 */
-            min-height: 400px;
+            display: none;
+            min-height: 450px;
+            box-sizing: border-box;
         }
 
         .content-window.active {
-            display: block; /* 선택된 창만 화면에 표시 */
-            animation: fadeIn 0.4s ease;
+            display: block;
+            animation: fadeIn 0.3s ease-out;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
         }
 
         .window-title {
             font-family: 'Cinzel', serif;
-            font-size: 28px;
+            font-size: 26px;
             color: var(--accent-gold);
             border-bottom: 1px solid var(--menu-border);
             padding-bottom: 15px;
             margin-top: 0;
             margin-bottom: 25px;
             text-align: left;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
 
-    <!-- 1. 상단 내비게이션 바 구역 -->
+    <!-- 1. 상단 메뉴 헤더 바 구역 -->
     <div class="header-bar">
         <div class="logo-text">JEOGORI RPG</div>
         
         <div class="right-header-group">
-            <!-- 유튜브 구독 단추가 라이트/다크모드 스위치 바로 왼쪽에 밀착 연결됨 -->
             <a href="https://youtube.com" target="_blank" class="youtube-btn">YOUTUBE 구독하기</a>
             
             <div class="switch-container">
@@ -217,48 +214,44 @@
         </div>
     </div>
 
-    <!-- 메인 프레임 레이아웃 -->
-    <div style="display: flex; max-width: 1300px; margin: 0 auto; padding: 60px 20px; gap: 50px; justify-content: center; align-items: flex-start; text-align: left;">
+    <!-- 메인 대시보드 레이아웃 프레임 -->
+    <div style="display: flex; max-width: 1200px; margin: 0 auto; padding: 50px 20px; gap: 40px; justify-content: center; align-items: flex-start; text-align: left;">
         
-        <!-- 좌측: 평행사변형 RPG 스타일 사이드 메뉴 바 -->
+        <!-- 좌측: 글자 안 깨지는 정통 RPG 스타일 배너 메뉴판 -->
         <div class="menu-container">
-            <div class="menu-item active" onclick="openWindow('main-window', this)"><span>메인 홈</span></div>
-            <div class="menu-item" onclick="openWindow('char-window', this)"><span>캐릭터 정보</span></div>
-            <div class="menu-item" onclick="openWindow('skill-window', this)"><span>스킬 정보</span></a>
-            <div class="menu-item" onclick="openWindow('deck-window', this)"><span>조합 정보</span></a>
-            <div class="menu-item" onclick="openWindow('system-window', this)"><span>설정 및 시스템</span></a>
+            <div class="menu-item active" onclick="openWindow('main-window', this)"><span>🏰 메인 홈</span></div>
+            <div class="menu-item" onclick="openWindow('char-window', this)"><span>🛡️ 캐릭터 정보</span></div>
+            <div class="menu-item" onclick="openWindow('skill-window', this)"><span>⚔️ 스킬 정보</span></div>
+            <div class="menu-item" onclick="openWindow('deck-window', this)"><span>💎 조합 정보</span></div>
+            <div class="menu-item" onclick="openWindow('system-window', this)"><span>⚙️ 설정 및 시스템</span></div>
         </div>
 
-        <!-- 우측: 콘텐츠 디스플레이 구역 (DEVELOPER LOGS 영상 구역 완벽하게 삭제 완료) -->
-        <div style="flex: 1; max-width: 850px;">
+        <!-- 우측: 전환되는 개별 정보 보드판 구역 -->
+        <div style="flex: 1; max-width: 880px; width: 100%;">
             
             <!-- [창 1] 메인 홈 화면 -->
             <div id="main-window" class="content-window active">
                 <h2 class="window-title">THE ADVENTURE BEGINS</h2>
-                <div style="width: 100%; height: 250px; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('https://unsplash.com') no-repeat center center/cover; border: 1px solid var(--menu-border); margin-bottom: 30px;"></div>
-                <h1 style="font-family: 'Cinzel', serif; font-size: 42px; margin: 0 0 15px 0; color: #fff;">PLAY JEOGORI</h1>
-                <p style="font-size: 16px; line-height: 1.8; color: var(--text-color);">보내주신 웅장한 심연의 대검 일러스트를 메인 아트로 탑재한 정통 다크 판타지 인디 RPG 공식 웹사이트입니다. 왼쪽 메뉴판의 시스템 창을 클릭하여 게임 정보를 실시간으로 확인하세요.</p>
+                <div style="width: 100%; height: 260px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('https://unsplash.com') no-repeat center center/cover; border: 1px solid var(--menu-border); border-radius: 4px; margin-bottom: 30px;"></div>
+                <h1 style="font-family: 'Cinzel', serif; font-size: 38px; margin: 0 0 15px 0; color: #fff; letter-spacing: 1px;">PLAY JEOGORI</h1>
+                <p style="font-size: 16px; line-height: 1.8; color: var(--text-color); margin: 0;">보내주신 웅장한 대검 아트워크를 배경으로 장착한 정통 다크 판타지 인디 RPG의 공식 웹기지입니다.<br>왼쪽 메뉴 도감들을 클릭하면 새로고침 없이 각 시스템 화면으로 부드럽게 즉시 전환됩니다.</p>
             </div>
 
             <!-- [창 2] 캐릭터 정보 창 -->
             <div id="char-window" class="content-window">
-                <h2 class="window-title">CHARACTER INFO</h2>
-                <p style="font-size: 16px; line-height: 1.8;">🛡️ **출시 예정 클래스 도감**</p>
-                <p style="color: var(--sub-text); line-height: 1.6;">여기에 기획 중이신 캐릭터의 클래스(예: 전사, 마법사, 도적) 설명이나 일러스트 스펙 정보를 타이핑하여 유저들에게 각인시킬 수 있습니다.</p>
+                <h2 class="window-title">CHARACTER CLASS INFO</h2>
+                <p style="font-size: 17px; font-weight: 700; color: var(--accent-gold); margin-bottom: 15px;">출시 예정 영웅 및 클래스 정보 도감</p>
+                <p style="font-size: 15px; color: var(--text-color); line-height: 1.8;">여기에 기획 중이신 캐릭터의 클래스(예: 전사, 마법사, 궁수) 특징이나 고유 일러스트 스펙 데이터를 적어 유저들에게 기대감을 심어주는 공간입니다.</p>
             </div>
 
             <!-- [창 3] 스킬 정보 창 -->
             <div id="skill-window" class="content-window">
-                <h2 class="window-title">SKILL SYSTEM</h2>
-                <p style="font-size: 16px; line-height: 1.8;">⚔️ **무기 및 마법 스킬 트리**</p>
-                <p style="color: var(--sub-text); line-height: 1.6;">RPG 게임의 핵심인 스킬 트리 계보나 고유 상성 기술 데이터를 유저들이 한눈에 공부할 수 있도록 채워 넣는 칸입니다.</p>
+                <h2 class="window-title">SKILL TREE SYSTEM</h2>
+                <p style="font-size: 17px; font-weight: 700; color: var(--accent-gold); margin-bottom: 15px;">스킬 계보도 및 마법 특성 조율</p>
+                <p style="font-size: 15px; color: var(--text-color); line-height: 1.8;">RPG 게임 플레이의 핵심이 되는 고유 무기 기술이나 연계 액션 메커니즘을 게이머들이 사전에 학습할 수 있도록 가이드를 제공하는 칸입니다.</p>
             </div>
 
             <!-- [창 4] 조합 정보 창 -->
             <div id="deck-window" class="content-window">
                 <h2 class="window-title">CRAFTING & COMBINATION</h2>
-                <p style="font-size: 16px; line-height: 1.8;">💎 **장비 합성 및 아이템 레시피**</p>
-                <p style="color: var(--sub-text); line-height: 1.6;">아이템 강화 조합법, 룬 합성 규칙, 혹은 최적의 덱 빌드 조합 가이드를 공략집 형태로 제공할 수 있는 세션입니다.</p>
-            </div>
-
-            <!-- [창 5] 설정 및 시스템 창 -->
+                <p style="font-size: 17px; font-weight: 700; color: var(--accent-gold); margin-bottom: 15px;">장비 합성식 및 숨겨진 룬 아이템 레시피</p>
