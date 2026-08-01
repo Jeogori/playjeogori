@@ -3,39 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Play Jeogori - 공식 홈페이지</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Play Jeogori - 정통 다크 판타지 하드코어 RPG 공식 웹 기지</title>
+    <!-- 고풍스럽고 가독성이 최상인 글로벌 정통 판타지 명품 구글 웹 폰트 장착 -->
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        body { background-color: #0b0a0d; color: #e3dec9; text-align: center; font-family: 'Noto Serif KR', serif; margin: 0; padding: 0; overflow-x: hidden; }
-        .header-bar { background-color: #131117; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #c5a880; position: sticky; top: 0; z-index: 9999; box-shadow: 0 4px 20px rgba(0,0,0,0.8); }
-        .logo-text { font-family: 'Cinzel', serif; font-size: 26px; font-weight: 900; color: #c5a880; letter-spacing: 2px; }
-        .youtube-btn { background: linear-gradient(135deg, #9e2a2b, #6e1a1b); color: #ffffff !important; border: 1px solid #c5a880; padding: 10px 22px; font-size: 14px; font-weight: 700; text-decoration: none; letter-spacing: 1px; border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.4); transition: all 0.2s; }
-        .youtube-btn:hover { filter: brightness(1.2); box-shadow: 0 0 15px #c5a880; transform: translateY(-1px); }
-        .main-container { display: flex; max-width: 1200px; margin: 0 auto; padding: 50px 20px; gap: 40px; justify-content: center; align-items: flex-start; text-align: left; }
-        .menu-container { display: flex; flex-direction: column; gap: 10px; width: 240px; flex-shrink: 0; }
-        .menu-item { background-color: #1c1922; color: #e3dec9; padding: 15px 20px; font-weight: 700; font-size: 16px; text-decoration: none; text-align: left; border-left: 5px solid #36303d; border-top: 1px solid #36303d; border-right: 1px solid #36303d; border-bottom: 1px solid #36303d; border-radius: 0 6px 6px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: all 0.2s ease; white-space: nowrap; }
-        .menu-item:hover, .menu-item.active { background-color: #9e2a2b; color: #ffffff; border-left: 5px solid #c5a880; transform: translateX(6px); }
-        .content-window { background-color: #131117; border: 2px solid #c5a880; border-radius: 6px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); box-sizing: border-box; flex: 1; max-width: 880px; width: 100%; min-height: 480px; }
-        .window-title { font-family: 'Cinzel', serif; font-size: 26px; color: #c5a880; border-bottom: 1px solid #36303d; padding-bottom: 15px; margin-top: 0; margin-bottom: 25px; letter-spacing: 1px; }
-    </style>
-</head>
-<body>
-    <div class="header-bar"><div class="logo-text">JEOGORI RPG</div><a href="https://youtube.com" target="_blank" class="youtube-btn">YOUTUBE 구독하기</a></div>
-    <div class="main-container">
-        <div class="menu-container">
-            <a href="index.html" class="menu-item active">🏰 메인 홈</a>
-            <a href="char.html" class="menu-item">🛡️ 캐릭터 정보</a>
-            <a href="skill.html" class="menu-item">⚔️ 스킬 정보</a>
-            <a href="deck.html" class="menu-item">💎 조합 정보</a>
-            <a href="system.html" class="menu-item">⚙️ 설정 및 시스템</a>
-        </div>
-        <div class="content-window">
-            <h2 class="window-title">THE ADVENTURE BEGINS</h2>
-            <div style="width: 100%; height: 260px; background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('https://unsplash.com') no-repeat center center/cover; border: 1px solid #36303d; border-radius: 4px; margin-bottom: 30px;"></div>
-            <h1 style="font-family: 'Cinzel', serif; font-size: 38px; margin: 0 0 15px 0; color: #c5a880; letter-spacing: 1px;">PLAY JEOGORI</h1>
-            <p style="font-size: 16px; line-height: 1.8; color: #e3dec9; margin: 0;">보내주신 심연의 대검 아트를 메인 비주얼로 장착한 정통 다크 판타지 하드코어 RPG 공식 웹기지입니다.<br><br>방대한 심연의 대륙 '저고리'를 탐험할 모험가들을 위한 안내소이며, 왼쪽 메뉴판의 시스템 버튼들을 클릭하면 발로란트와 동일하게 완전히 분리된 개별 독립 페이지로 렉 없이 깔끔하게 화면 전체가 대전환됩니다.</p>
-        </div>
-    </div>
-    <div style="background-color: #0b0a0d; padding: 30px; border-top: 1px solid #36303d; color: #555861; font-size: 13px; margin-top: 100px;"><p>© 2026 JEOGORI GAMES. ALL RIGHTS RESERVED.</p></div>
-</body>
-</html>
+        /* ==========================================
+           1. 글로벌 코어 엔진 및 완벽 방어형 스타일 테마
+           ========================================== */
+        :root {
+            --bg-dark-core: #070608;
+            --bg-container: #110e14;
+            --bg-card-inner: #19161f;
+            --border-gold-noble: #c5a880;
+            --border-dim-ash: #2e2836;
+            --text-gold-bright: #ebd2ad;
+            --text-ash-light: #d1cbd6;
+            --text-muted-gray: #837a8a;
+            --ruby-neon-glow: #ff4655;
+            --ruby-dark-blood: #8c1c24;
+            --shadow-heavy-black: rgba(0, 0, 0, 0.85);
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            background-color: var(--bg-dark-core);
+            color: var(--text-ash-light);
+            text-align: center;
+            font-family: 'Noto Sans KR', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            user-select: none;
+        }
+
+        /* 스크롤바 인테리어 튜닝 */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark-core); }
+        ::-webkit-scrollbar-thumb { background: var(--border-gold-noble); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--ruby-neon-glow); }
+
+        /* ==========================================
+           2. 레이아웃 컴포넌트 프레임워크 (철통 가독성 보장)
+           ========================================== */
+        .global-header-bar {
+            background-color: var(--bg-container);
+            padding: 15px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--border-gold-noble);
+            position: sticky;
+            top: 0;
+            z-index: 99999;
+            box-shadow: 0 5px 25px var(--shadow-heavy-black);
+        }
+
+        .brand-logo-zone {
+            font-family: 'Cinzel', serif;
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--border-gold-noble);
+            letter-spacing: 3px;
+            text-shadow: 0 0 12px rgba(197, 168, 128, 0.3);
+            text-decoration: none;
+        }
+
+        .header-action-button {
+            background: linear-gradient(135deg, var(--ruby-dark-blood), #540c11);
+            color: #ffffff !important;
+            border: 1px solid var(--border-gold-noble);
+            padding: 12px 26px;
+            font-size: 14px;
+            font-weight: 900;
+            text-decoration: none;
+            letter-spacing: 1.5px;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .header-action-button:hover {
+            filter: brightness(1.3);
+            box-shadow: 0 0 20px var(--border-gold-noble);
+            transform: translateY(-2px);
+        }
+
+        .master-layout-wrapper {
+            display: flex;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 50px 25px;
+            gap: 45px;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        /* 절대 찌그러지지 않는 완벽 고정형 제어 메뉴 기지 */
+        .sidebar-menu-fortress {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 250px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 110px;
+        }
+
+        .sidebar-menu-button {
+            background-color: var(--bg-card-inner);
+            color: var(--text-ash-light);
+            padding: 18px 24px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            text-align: left;
+            border-left: 5px solid var(--border-dim-ash);
+            border-top: 1px solid var(--border-dim-ash);
+            border-right: 1px solid var(--border-dim-ash);
+            border-bottom: 1px solid var(--border-dim-ash);
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+            cursor: pointer;
+        }
+
+        .sidebar-menu-button:hover, .sidebar-menu-button.active {
+            background-color: var(--ruby-dark-blood);
+            color: #ffffff;
+            border-left: 5px solid var(--border-gold-noble);
+            border-color: rgba(197, 168, 128, 0.4);
+            transform: translateX(8px);
+            box-shadow: 0 8px 20px var(--shadow-heavy-black);
+        }
+
+        /* 💡 1줄 코드로 화면 전환을 구현하는 거대 디스플레이 윈도우 보드 */
+        .main-display-board {
+            flex: 1;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .dynamic-content-window {
+            background-color: var(--bg-container);
+            border: 2px solid var(--border-gold-noble);
+            border-radius: 8px;
+            padding: 45px;
+            box-shadow: 0 12px 40px var(--shadow-heavy-black);
+            box-sizing: border-box;
+            width: 100%;
+            min-height: 520px;
+            display: none; /* 핵심 패치: 불필요 창 기본 완전 격리 잠금 */
+        }
+
+        .dynamic-content-window.active {
+            display: block;
+            animation: supremeFadeIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+
+        @keyframes supremeFadeIn {
+            from { opacity: 0; transform: translateY(8px) scale(0.99); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .window-master-title {
+            font-family: 'Cinzel', serif;
+            font-size: 28px;
+            color: var(--text-gold-bright);
+            border-bottom: 1px solid var(--border-dim-ash);
+            padding-bottom: 18px;
+            margin-top: 0;
+            margin-bottom: 30px;
+            letter-spacing: 1.5px;
+        }
+
+        /* ==========================================
+           3. 세부 디자인 엘리먼트 (발로란트 + 하드코어 RPG 조합)
+           ========================================== */
+        /* 초대형 전술 메인 배너 간판 */
+        .valorant-hero-shield {
+            width: 100%;
+            height: 380px;
+            background: linear-gradient(rgba(7, 6, 8, 0.3), rgba(7, 6, 8, 0.85)), url('https://unsplash.com') no-repeat center center/cover;
+            border: 1px solid var(--border-dim-ash);
+            border-radius: 6px;
+            margin-bottom: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+        .hero-banner-title { font-family: 'Cinzel', serif; font-size: 58px; font-weight: 900; color: #ffffff; margin: 0 0 15px 0; letter-spacing: 7px; text-shadow: 0 5px 20px rgba(0,0,0,0.95); }
+        .hero-banner-desc { font-size: 17px; font-weight: 700; color: var(--text-gold-bright); margin: 0 0 40px 0; max-width: 650px; line-height: 1.6; text-shadow: 0 3px 10px rgba(0,0,0,0.9); }
+        .hero-launch-btn { background-color: var(--ruby-neon-glow); color: #ffffff; border: none; padding: 16px 45px; font-size: 16px; font-weight: 900; cursor: pointer; letter-spacing: 1.5px; box-shadow: 0 4px 22px rgba(255, 70, 85, 0.5); transition: all 0.25s ease; border-radius: 2px; }
+        .hero-launch-btn:hover { background-color: #e53e4c; transform: scale(1.04); box-shadow: 0 0 30px rgba(255, 70, 85, 0.8); }
+
+        /* 최신 소식 3단 프리미엄 카드 보드 */
+        .news-section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 25px; border-bottom: 2px solid var(--border-gold-noble); padding-bottom: 15px; }
+        .news-section-title { font-size: 24px; font-weight: 900; color: var(--text-gold-bright); margin: 0; letter-spacing: 1px; }
+        .news-section-more { color: var(--text-ash-light); text-decoration: none; font-size: 13px; font-weight: 700; transition: color 0.2s; font-family: 'Oswald', sans-serif; }
+        .news-section-more:hover { color: var(--ruby-neon-glow); }
+        
+        .news-flex-grid { display: flex; gap: 20px; width: 100%; box-sizing: border-box; }
+        .news-premium-card { flex: 1; background-color: var(--bg-card-inner); border: 1px solid var(--border-dim-ash); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1); }
+        .news-premium-card:hover { transform: translateY(-6px); border-color: var(--border-gold-noble); box-shadow: 0 12px 25px rgba(0,0,0,0.6); }
+        .news-card-thumbnail { width: 100%; height: 130px; background-size: cover; background-position: center; border-bottom: 1px solid var(--border-dim-ash); }
+        .news-card-body { padding: 18px; text-align: left; display: flex; flex-direction: column; gap: 10px; }
+        .news-meta-row { display: flex; gap: 12px; font-size: 11px; font-weight: 700; font-family: 'Oswald', sans-serif; }
+        .news-meta-tag { color: var(--ruby-neon-glow); }
+        .news-meta-date { color: var(--text-muted-gray); }
